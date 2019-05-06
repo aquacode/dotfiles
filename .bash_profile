@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load .bashrc and other files...
-for file in ~/.{bashrc,bash_prompt,aliases,functions,path,dockerfunc,exports}; do
+for file in ~/.{bashrc,bash_prompt,aliases,functions,path,dockerfunc,extra,exports}; do
     if [[ -r "$file" ]] && [[ -f "$file" ]]; then
         # shellcheck source=/dev/null
         source "$file"
@@ -35,3 +35,7 @@ else
 fi
 
 ./ssh-load-keys.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/michaelb/.sdkman"
+[[ -s "/Users/michaelb/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/michaelb/.sdkman/bin/sdkman-init.sh"

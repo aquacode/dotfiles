@@ -59,6 +59,3 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_ND
 export NVM_DIR=~/.nvm
 source /usr/local/opt/nvm/nvm.sh
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/mbrizic/.sdkman"
-[[ -s "/Users/mbrizic/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mbrizic/.sdkman/bin/sdkman-init.sh"
