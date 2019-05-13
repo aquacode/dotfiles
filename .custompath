@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # go path
 export GOPATH="${HOME}/.go"
@@ -53,9 +53,9 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 # ANDROID
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export ANDROID_NDK_HOME=~/tools/android-ndk-r15c
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK_HOME
+export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK_HOME"
 
 # NVM
-export NVM_DIR=~/.nvm
-source /usr/local/opt/nvm/nvm.sh
+export NVM_DIR="/Users/$USER/.nvm"
+source "/usr/local/opt/nvm/nvm.sh"
 
