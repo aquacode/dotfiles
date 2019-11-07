@@ -1,0 +1,66 @@
+[alias]
+
+	l = log --pretty=oneline -n 20 --graph --abbrev=commit
+
+	s = status -s
+
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+	p = !"git pull; git submodule foreach git pull origin master"
+
+	c = clone --recursive
+
+	ca = !git add -A && git commit -av
+
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+	graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
+
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
+
+	contributors = shortlog --summary --numbered
+
+
+
+[apply]
+
+	whitespace = fix
+
+[color]
+
+	ui = auto
+
+[core]
+
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+
+	whitespace = space-before-tab,--indent-with-non-tab,trailing-space
+
+	trustctime = false
+	editor = vim
+
+[push]
+
+	default = simple
+
+[diff]
+
+	renames = copies
+
+[merge]
+
+	log = true
+
+[user]
+	name = Michael Brizic
+	email = michael.brizic@stagrp.com
+
+[credential]
+	helper = osxkeychain
