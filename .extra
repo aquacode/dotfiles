@@ -1,0 +1,11 @@
+
+pullall() {
+	for x in $1/*; do
+        if [ -d $x ]; then
+            pushd $x
+            g s
+            g pull
+            popd
+        fi
+	done
+}

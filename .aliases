@@ -142,21 +142,7 @@ alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Pri
 #MINE
 alias flushdns='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache'
 
-# PATIENT EXPERIENCE
-alias cdpxmain='cd ~/source/patient-connect-main'
-alias cdpxcore='cd ~/source/patient-connect-core'
-alias cdops='cd ~/source/patient-connect-devops'
-alias cdpxios='cd ~/source/patient-connect-ios'
-alias cdresearch='cd ~/source/patient-connect-research'
-alias cdpxandroid='cd ~/source/patient-connect-android-apps'
+alias dirsizes='du -sch ./*'
 
-# VIRTUAL CARE ROOM
-alias cdcaac='cd ~/source/vcr-caac'
-alias cdvcrapp='cd ~/source/vcr-apps'
-alias cdvcriso='cd ~/source/vcr_iso'
-alias cdvcrcore='cd ~/source/vcr_core'
-alias cdecmisc='cd ~/source/ext-care-misc'
+alias cryptocli='docker run -it --rm ec.repo.dillonkane.com/cryptocli'
 
-# go
-alias cdgo='cd ~/go'
-alias gosrc='cd ~/go/src'

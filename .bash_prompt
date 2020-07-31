@@ -5,6 +5,16 @@
 # iTerm → Profiles → Text → use 13pt Monaco with 1.1 vertical spacing.
 # vim: set filetype=sh :
 
+
+# Mac specific (mine) https://apple.stackexchange.com/questions/282185/how-do-i-get-different-colors-for-directories-etc-in-iterm2
+# Also: https://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
+# And: https://superuser.com/questions/399594/color-scheme-not-applied-in-iterm2
+
+export CLICOLOR=1
+export LSCOLORS="ExfxcxdxBxegecabagacad" 
+
+
+
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
 	export TERM='gnome-256color';
 elif infocmp xterm-256color >/dev/null 2>&1; then

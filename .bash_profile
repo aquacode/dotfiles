@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Load .bashrc and other files...
 for file in ~/.{bashrc,bash_prompt,aliases,functions,custompath,dockerfunc,extra,exports}; do
     if [[ -r "$file" ]] && [[ -f "$file" ]]; then
@@ -34,7 +36,7 @@ else
      start_agent;
 fi
 
-./ssh-load-keys.sh
+~/ssh-load-keys.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/$USER/.sdkman"

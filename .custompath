@@ -38,24 +38,36 @@ if which rbenv > /dev/null; then
     eval "$(rbenv init -)";
 fi
 
+# PYTHON ENV
+eval "$(pyenv init -)"
+
 # RPM build toolchain (Ruby) -- CUSTOM
-export PATH=~/tools/rpm-scripts/build:$PATH
+#export PATH=~/tools/rpm-scripts/build:$PATH
 
 # Fastlane
-export PATH=$HOME/.fastlane/bin:$PATH
+#export PATH=$HOME/.fastlane/bin:$PATH
 
 
 # PYTHON
 #export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+#export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+
+
+# Local one-off custom binaries in Home directory
+export PATH="${HOME}/.bin:${PATH}"
 
 
 # ANDROID
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
-export ANDROID_NDK_HOME=~/tools/android-ndk-r15c
-export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK_HOME"
+#export ANDROID_NDK_HOME=~/tools/android-ndk-r15c
+export PATH="${PATH}:$ANDROID_HOME/platform-tools"
 
 # NVM
-export NVM_DIR="/Users/$USER/.nvm"
-source "/usr/local/opt/nvm/nvm.sh"
+#export NVM_DIR="/Users/$USER/.nvm"
+#source "/usr/local/opt/nvm/nvm.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 

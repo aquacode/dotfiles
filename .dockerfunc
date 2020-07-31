@@ -6,6 +6,11 @@ export DOCKER_REPO_PREFIX=jess
 #
 # Helper Functions
 #
+dockerclean(){
+	docker rm $(docker ps -a -q)
+	docker images -q --filter "dangling=true" | xargs docker rmi
+}
+
 dcleanup(){
 	local containers
 	mapfile -t containers < <(docker ps -aq 2>/dev/null)
@@ -97,13 +102,13 @@ audacity(){
 		--name audacity \
 		${DOCKER_REPO_PREFIX}/audacity
 }
-aws(){
-	docker run -it --rm \
-		-v "${HOME}/.aws:/root/.aws" \
-		--log-driver none \
-		--name aws \
-		${DOCKER_REPO_PREFIX}/awscli "$@"
-}
+#aws(){
+#	docker run -it --rm \
+#		-v "${HOME}/.aws:/root/.aws" \
+#		--log-driver none \
+#		--name aws \
+#		${DOCKER_REPO_PREFIX}/awscli "$@"
+#}
 az(){
 	docker run -it --rm \
 		-v "${HOME}/.azure:/root/.azure" \
@@ -944,17 +949,17 @@ termboy(){
 		--name termboy \
 		${DOCKER_REPO_PREFIX}/nes "/games/${game}.rom"
 }
-terraform(){
-	docker run -it --rm \
-		-v "${HOME}:${HOME}:ro" \
-		-v "$(pwd):/usr/src/repo" \
-		-v /tmp:/tmp \
-		--workdir /usr/src/repo \
-		--log-driver none \
-		-e GOOGLE_APPLICATION_CREDENTIALS \
-		-e SSH_AUTH_SOCK \
-		${DOCKER_REPO_PREFIX}/terraform "$@"
-}
+# terraform(){
+# 	docker run -it --rm \
+# 		-v "${HOME}:${HOME}:ro" \
+# 		-v "$(pwd):/usr/src/repo" \
+# 		-v /tmp:/tmp \
+# 		--workdir /usr/src/repo \
+# 		--log-driver none \
+# 		-e GOOGLE_APPLICATION_CREDENTIALS \
+# 		-e SSH_AUTH_SOCK \
+# 		${DOCKER_REPO_PREFIX}/terraform "$@"
+# }
 tor(){
 	del_stopped tor
 
