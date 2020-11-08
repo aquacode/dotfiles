@@ -721,6 +721,22 @@ pulseaudio(){
 		--name pulseaudio \
 		${DOCKER_REPO_PREFIX}/pulseaudio
 }
+pydocker(){
+	docker run -it --rm \
+		-w="/opt" \
+		-v $PWD:/opt/ \
+		--name pydocker \
+		python:3.9-slim \
+		pip install -r requirements.txt && python "$@"
+}
+pyshell(){
+	docker run -it --rm \
+		-w="/opt" \
+		-v $PWD:/opt/ \
+		--name pyshell \
+		python:3.9-slim \
+		bash
+}
 rainbowstream(){
 	docker run -it --rm \
 		-v /etc/localtime:/etc/localtime:ro \
