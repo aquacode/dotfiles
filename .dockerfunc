@@ -951,11 +951,6 @@ tarsnap(){
 		-v "$HOME:/root/workdir" \
 		${DOCKER_REPO_PREFIX}/tarsnap "$@"
 }
-telnet(){
-	docker run -it --rm \
-		--log-driver none \
-		${DOCKER_REPO_PREFIX}/telnet "$@"
-}
 termboy(){
 	del_stopped termboy
 	local game=$1
@@ -1034,11 +1029,11 @@ torproxy(){
 
 	hostess add torproxy "$(docker inspect --format '{{.NetworkSettings.Networks.bridge.IPAddress}}' torproxy)"
 }
-traceroute(){
-	docker run --rm -it \
-		--net host \
-		${DOCKER_REPO_PREFIX}/traceroute "$@"
-}
+#traceroute(){
+#	docker run --rm -it \
+#		--net host \
+#		${DOCKER_REPO_PREFIX}/traceroute "$@"
+#}
 transmission(){
 	del_stopped transmission
 

@@ -46,6 +46,10 @@
 	trustctime = false
 	editor = vim
 
+[pull]
+
+	rebase = false
+
 [push]
 
 	default = simple

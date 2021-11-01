@@ -478,3 +478,15 @@ xrandrNYC() {
 		--output DP-1-2 --mode 3840x2160 --rate 60  --pos 0x900  \
 		--output DP-2-2 --mode 3840x2160 --rate 60  --rotate left --pos 3840x0
 	}
+
+vpndkg() {
+	/opt/cisco/anyconnect/bin/vpn -s < ~/.vpndkg/dkg.txt
+}
+
+vpntunnelall() {
+	/opt/cisco/anyconnect/bin/vpn -s < ~/.vpndkg/tunnelall.txt
+}
+
+vpndisconnect() {
+	/opt/cisco/anyconnect/bin/vpn disconnect
+}
