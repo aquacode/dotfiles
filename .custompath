@@ -1,13 +1,15 @@
 #!/bin/bash
 
 # go path
+export GOROOT=/usr/local/go
+
 export GOPATH="${HOME}/.go"
 
 # update path
 export PATH=/usr/local/bin:${PATH}:/sbin
 
 # add go path
-export PATH="/usr/local/go/bin:${GOPATH}/bin:${PATH}"
+export PATH="${GOROOT}/bin:${GOPATH}/bin:${PATH}"
 
 # add bcc tools path
 export PATH="/usr/share/bcc/tools:${PATH}"
@@ -39,6 +41,7 @@ if which rbenv > /dev/null; then
 fi
 
 # PYTHON ENV
+export PATH=$(pyenv root)/shims:$PATH
 eval "$(pyenv init -)"
 
 # RPM build toolchain (Ruby) -- CUSTOM

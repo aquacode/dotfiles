@@ -145,3 +145,7 @@ alias flushdns='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper
 alias dirsizes='du -sch ./*'
 
 alias cryptocli='docker run -it --rm ec.repo.dillonkane.com/cryptocli'
+
+alias pinentry='pinentry-mac'
+
+alias nv='nvim'
