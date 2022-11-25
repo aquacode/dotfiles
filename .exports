@@ -19,3 +19,5 @@ export MANPAGER="less -X";
 
 # MINE
 export CLICOLOR=1
+
+export JIRA_API_TOKEN=
